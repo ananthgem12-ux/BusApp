@@ -77,7 +77,7 @@ export class TicketGenerationPage {
     /* CHANGE BUS IMAGE */
 
     if (this.type === 'AC') {
-      this.busImage = 'assets/bus_red.png';
+      this.busImage = 'assets/bus_red_1.png';
     } else if (this.type === 'Delux') {
       if (this.vehicle === 'EV') {
         this.busImage = 'assets/bus_green.png';

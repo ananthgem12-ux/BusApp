@@ -410,127 +410,94 @@ ion-content {
   letter-spacing: -0.1px;
 }
 
-/* RESERVE PREMIUM BUS CARD */
-.reserve-premium-container {
-  background-color: #3d3d3d; /* dark gray background matching reference image */
+/* PREMIUM BUS (New Layout) */
+.premium-bus-white-card {
+  background-color: #ffffff;
   border-radius: 18px;
-  padding: 10px 14px;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  box-sizing: border-box;
+  padding: 16px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(218, 203, 203, 0.08);
-  height: 125px; /* increased height to fit larger contents */
-}
-
-.premium-left-info-vertical {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
-  max-width: 45%;
-  height: 100%;
-  justify-content: center;
-  box-sizing: border-box;
+  gap: 12px;
 }
 
-.premium-badge-star-icon {
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(135deg, #fff2cc 0%, #9c8025 50%, #aa7c11 100%);
-  border-radius: 7px;
-  position: relative;
+.premium-bus-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.premium-bus-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.premium-bus-subtitle {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6e6e73;
+}
+
+.premium-bus-body {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(9, 9, 9, 0.2);
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    width: 5px;
-    height: 5px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    filter: blur(0.5px);
-    box-shadow: 0 0 3px #ffffff;
-  }
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.premium-headline-stacked {
-  font-size: 15px; /* increased title size */
-  font-weight: 700;
-  color: #c49d1f; /* golden bronze text matching reference image */
-  line-height: 1.25;
-  letter-spacing: -0.1px;
-  text-transform: none;
+.premium-bus-image-wrapper {
+  flex-shrink: 0;
+  width: 100px;
 }
 
-.premium-more-info-link {
-  font-size: 13.5px; /* increased from 9px */
-  font-weight: 700;
-  color: #c49d1f;
-  text-decoration: underline;
-  cursor: pointer;
-  opacity: 0.95;
+.premium-bus-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-.premium-horizontal-scroll {
+.premium-bus-buttons {
   display: flex;
   gap: 10px;
-  overflow-x: auto;
-  max-width: 55%;
   align-items: center;
-  height: 100%;
-  scrollbar-width: none; /* Hide standard Firefox scrollbar */
-  left: -160px;
-  &::-webkit-scrollbar {
-    display: none; /* Hide Chrome/Safari scrollbar */
+}
+
+.premium-bus-btn {
+  background-color: #ffffff;
+  border: 1.5px solid #e5e5ea;
+  border-radius: 20px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  
+  &:active {
+    background-color: #f2f2f7;
   }
 }
 
-.premium-route-card {
-  background-color: #ffffff;
-  border-radius: 20px;
-  width: 78px;
-  padding:0px 42px 0px 42px;
-  height: 82px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
-  
-  .route-code {
-    font-size: 20px; /* larger route number */
-    font-weight: 800;
-    color: #000000;
-    line-height: 1.1;
-  }
-  
-  .route-tag {
-    font-size: 10px; /* increased from 8px */
-    font-weight: 1000;
-    color: #8e8e93;
-    margin-top: 8px;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-  }
+.premium-btn-text {
+  margin-top: 1px;
 }
 
 /* CAROUSEL BANNER SLIDER */
 .banner-carousel-container {
   width: 100%;
-  height: 146px; /* restored to match real app layout */
+  height: 186px; /* restored to match real app layout */
   border-radius: 18px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .carousel-inner-slides {
@@ -688,28 +655,24 @@ ion-content {
 
 /* Carousel dots */
 .carousel-dots-row {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 5px;
-  z-index: 100;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 .carousel-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #d1d1d6;
   cursor: pointer;
   transition: width 0.2s ease, background-color 0.2s ease;
   
   &.active {
-    background-color: #ffffff;
-    width: 12px;
-    border-radius: 3px;
+    background-color: #1c1c1e;
   }
 }
 
@@ -939,20 +902,20 @@ ion-content {
   bottom: 80px; /* fixed overlay above bottom nav bar */
   left: 50%;
   transform: translateX(-50%);
-  width: 108px;
+  width: 130px; /* Wider shape */
   height: 72px;
   background-color: #005ae6; /* bright royal blue */
-  border-radius: 16px;
+  border-radius: 26px; /* Squircle appearance */
   border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
+  box-shadow: 0 8px 16px rgba(0, 90, 230, 0.25);
   cursor: pointer;
   z-index: 1050;
   box-sizing: border-box;
-  padding: 6px;
+  padding: 8px;
   transition: transform 0.1s ease, background-color 0.1s ease;
   
   &:active {
@@ -965,7 +928,7 @@ ion-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 32px;
+  height: 36px;
 }
 
 .bus-otp-svg {
@@ -1797,7 +1760,8 @@ ion-content {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 65px;
+  height: 75px; /* Increased height to bring icons up */
+  padding-bottom: env(safe-area-inset-bottom, 10px);
   background-color: #ffffff;
   border-top: 1px solid #e0e0e0;
   display: flex;
@@ -1819,24 +1783,30 @@ ion-content {
   transition: all 0.2s ease;
   
   .nav-svg {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     fill: currentColor;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     transition: transform 0.15s ease;
   }
   
   .nav-label {
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     color: inherit;
   }
   
   &.active {
-    color: #ff3b30;
+    color: #8e8e93; /* keep base text grey */
+    
+    .nav-label {
+      color: #000000; /* active text is black */
+      font-weight: 800;
+    }
     
     .nav-svg {
-      transform: scale(1.1);
+      color: #ff3b30; /* active icon is red */
+      transform: scale(1.05);
     }
   }
 }

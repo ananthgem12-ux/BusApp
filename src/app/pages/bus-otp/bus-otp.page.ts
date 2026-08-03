@@ -351,6 +351,22 @@ export class BusOtpPage implements OnInit, OnDestroy {
     if (qrData.startsWith('http://') || qrData.startsWith('https://')) {
       try {
         const url = new URL(qrData);
+        
+        // NEW: Check for 'f' param which represents the bus OTP (e.g., K0404)
+        const fParam = url.searchParams.get('f');
+        if (fParam) {
+          const cleanCode = fParam.trim().toUpperCase();
+          this.stopCamera();
+          this.scanMode = false;
+          this.digits = cleanCode.slice(0, 5).split('');
+          this.router.navigate(['/booking'], {
+            state: {
+              ticket: cleanCode
+            }
+          });
+          return;
+        }
+
         const bus = url.searchParams.get('bus') || url.searchParams.get('route');
         if (bus) {
           const source = url.searchParams.get('source') || url.searchParams.get('from') || 'Navalur';

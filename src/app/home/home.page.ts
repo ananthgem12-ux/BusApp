@@ -247,6 +247,14 @@ export class HomePage implements OnInit, OnDestroy {
     this.startBannerSlider();
     this.startSearchSuggestionSlider();
 
+    const hasChecked = sessionStorage.getItem('has_checked_active_ticket_on_boot');
+    if (!hasChecked) {
+      sessionStorage.setItem('has_checked_active_ticket_on_boot', 'true');
+      if (this.activeTickets && this.activeTickets.length > 0) {
+        this.viewTicketDetails(this.activeTickets[0]);
+      }
+    }
+
     // Lazy load Google Map after page rendering completes
     setTimeout(() => {
       this.initGoogleMap();
@@ -292,9 +300,9 @@ export class HomePage implements OnInit, OnDestroy {
 
       if (Math.abs(diff) > 40) {
         if (diff > 0) {
-          this.setBannerIndex((this.activeBannerIndex + 1) % 4);
+          this.setBannerIndex((this.activeBannerIndex + 1) % 2);
         } else {
-          this.setBannerIndex((this.activeBannerIndex - 1 + 4) % 4);
+          this.setBannerIndex((this.activeBannerIndex - 1 + 2) % 2);
         }
       }
     }
@@ -336,7 +344,7 @@ export class HomePage implements OnInit, OnDestroy {
   // Automatic Banner slider timers
   startBannerSlider() {
     this.bannerTimer = setInterval(() => {
-      this.activeBannerIndex = (this.activeBannerIndex + 1) % 4;
+      this.activeBannerIndex = (this.activeBannerIndex + 1) % 2;
     }, 5000);
   }
 

@@ -1,24 +1,30 @@
 <ion-content fullscreen>
   <div class="app-container">
     
-    <!-- Royal Blue dynamic BUS OTP button (sticky/absolute at bottom, viewport-fixed) -->
+    <!-- Royal Blue dynamic BUS TICKET button (sticky/absolute at bottom, viewport-fixed) -->
     <div class="bus-otp-btn" *ngIf="currentTab === 'home'" (click)="openBusOtp()">
       <div class="bus-otp-icon-container">
-        <svg class="bus-otp-svg" viewBox="0 0 24 24" width="36" height="24">
-          <!-- Corner brackets (scanner corners) -->
-          <path d="M 4,6 L 4,4 L 6,4" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round" />
-          <path d="M 18,4 L 20,4 L 20,6" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round" />
-          <path d="M 4,12 L 4,14 L 6,14" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round" />
-          <path d="M 18,14 L 20,14 L 20,12" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round" />
+        <!-- New SVG for bus and ticket scanner -->
+        <svg class="bus-otp-svg" viewBox="0 0 40 26" width="56" height="34">
+          <!-- Corner brackets (scanner corners) - Thicker and wider -->
+          <path d="M 5,9 L 5,5 L 9,5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 35,9 L 35,5 L 31,5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 5,17 L 5,21 L 9,21" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 35,17 L 35,21 L 31,21" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
           
-          <!-- Four rounded vertical bars inside -->
-          <rect x="7" y="5.5" width="2" height="7" rx="0.8" ry="0.8" fill="white" />
-          <rect x="10" y="5.5" width="2" height="7" rx="0.8" ry="0.8" fill="white" />
-          <rect x="13" y="5.5" width="2" height="7" rx="0.8" ry="0.8" fill="white" />
-          <rect x="16" y="5.5" width="2" height="7" rx="0.8" ry="0.8" fill="white" />
+          <!-- Bus (left side) -->
+          <path d="M 16.5,8.5 C 13,8.5 13,10 13,10 L 13,17 L 14,17 L 14,18.5 C 14,19 15,19 15,18.5 L 15,17 L 18,17 L 18,18.5 C 18,19 19,19 19,18.5 L 19,17 L 20,17 L 20,10 C 20,10 20,8.5 16.5,8.5 Z" fill="white" />
+          <!-- Bus windshield/window -->
+          <rect x="14.2" y="10.5" width="4.6" height="2.5" rx="0.5" fill="#005ae6" />
+          <!-- Bus headlights -->
+          <rect x="14" y="15" width="1.5" height="1" fill="#005ae6" />
+          <rect x="17.5" y="15" width="1.5" height="1" fill="#005ae6" />
+          
+          <!-- Ticket (right side) -->
+          <path d="M 23,8.5 L 28.5,8.5 L 28.5,11.5 C 27,11.5 27,14.5 28.5,14.5 L 28.5,17 L 23,17 L 23,14.5 C 24.5,14.5 24.5,11.5 23,11.5 Z" fill="white" />
         </svg>
       </div>
-      <div class="bus-otp-label">BUS OTP</div>
+      <div class="bus-otp-label">BUS TICKET</div>
     </div>
 
     <!-- ================= HOME TAB ================= -->
@@ -129,80 +135,16 @@
             </div>
           </div>
 
-          <!-- 3. RESERVE PREMIUM BUS ROW -->
-          <div class="reserve-premium-container">
-            <div class="premium-left-info-vertical">
-              <!-- Premium gold bus card logo -->
-              <div class="premium-badge-star-icon">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="#5c4308">
-                  <path d="M18.8 4H5.2C4 4 3 5 3 6.2v10.6c0 1.2 1 2.2 2.2 2.2l-.8 1v1c0 .5.4 1 1 1h13.2c.6 0 1-.5 1-1v-1l-.8-1c1.2 0 2.2-1 2.2-2.2V6.2c0-1.2-1-2.2-2.2-2.2zM9 16c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4-5H5V7h14v4z"/>
-                </svg>
-              </div>
-              <div class="premium-headline-stacked">
-                Reserve<br>premium bus
-              </div>
-              <a class="premium-more-info-link">More Info</a>
-            </div>
-
-            <!-- Horizontal scrollable premium bus list -->
-            <div class="premium-horizontal-scroll">
-              <div class="premium-route-card">
-                <span class="route-code">P91</span>
-                <span class="route-tag">PREMIUM</span>
-              </div>
-              <div class="premium-route-card">
-                <span class="route-code">P570S</span>
-                <span class="route-tag">PREMIUM</span>
-              </div>
-              <div class="premium-route-card">
-                <span class="route-code">P119</span>
-                <span class="route-tag">PREMIUM</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. BANNER SLIDER WITH DOTS -->
+          <!-- 3. BANNER SLIDER WITH DOTS -->
           <div class="banner-carousel-container" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
             <div class="carousel-inner-slides" [style.transform]="'translateX(' + (-activeBannerIndex * 100) + '%)'">
               
-              <!-- Slide 0: Purple Refer a Friend Banner -->
-              <div class="carousel-slide-item purple-slide">
-                <img *ngIf="!imageErrors['refer_friend']" src="assets/refer_friend_banner.png" alt="Educate your friends about Chennai One" class="banner-slide-img" (error)="imageErrors['refer_friend'] = true" />
-                <div class="banner-fallback-content">
-                  <span class="fallback-tag">SHARE APP</span>
-                  <h3 class="fallback-title">Educate your friends about Chennai One</h3>
-                  <button class="fallback-btn">Share App with Friends</button>
-                </div>
+              <div class="carousel-slide-item">
+                <img src="assets/home_slide_1.jpg" alt="Slide 1" class="banner-slide-img" />
               </div>
 
-              <!-- Slide 1: Yellow Safety Setup Banner -->
-              <div class="carousel-slide-item yellow-slide">
-                <img *ngIf="!imageErrors['safety']" src="assets/safety_banner.png" alt="Setup Safety Now!" class="banner-slide-img" (error)="imageErrors['safety'] = true" />
-                <div class="banner-fallback-content dark-text">
-                  <span class="fallback-tag">SAFETY FIRST</span>
-                  <h3 class="fallback-title">Setup Safety Now! Safe and Reliable Rides</h3>
-                  <button class="fallback-btn dark">Setup Safety</button>
-                </div>
-              </div>
-
-              <!-- Slide 2: Blue Real-time Tracking Banner -->
-              <div class="carousel-slide-item blue-slide">
-                <img *ngIf="!imageErrors['live_tracking']" src="assets/live_tracking_banner.png" alt="Track your bus in real-time" class="banner-slide-img" (error)="imageErrors['live_tracking'] = true" />
-                <div class="banner-fallback-content">
-                  <span class="fallback-tag">LIVE ETA</span>
-                  <h3 class="fallback-title">Track your bus in real-time</h3>
-                  <span class="fallback-desc">Know exactly when your bus is arriving</span>
-                </div>
-              </div>
-
-              <!-- Slide 3: Teal Save Time Banner -->
-              <div class="carousel-slide-item teal-slide">
-                <img *ngIf="!imageErrors['passes']" src="assets/passes_banner.png" alt="Buy passes online" class="banner-slide-img" (error)="imageErrors['passes'] = true" />
-                <div class="banner-fallback-content">
-                  <span class="fallback-tag">TRANSIT PASSES</span>
-                  <h3 class="fallback-title">Buy passes online and save money</h3>
-                  <span class="fallback-desc">Skip the lines and purchase passes instantly</span>
-                </div>
+              <div class="carousel-slide-item">
+                <img src="assets/home_slide_2.jpg" alt="Slide 2" class="banner-slide-img" />
               </div>
 
             </div>
@@ -210,10 +152,37 @@
             <!-- Indicator dots -->
             <div class="carousel-dots-row">
               <span class="carousel-dot" 
-                    *ngFor="let dot of [0, 1, 2, 3]; let i = index" 
+                    *ngFor="let dot of [0, 1]; let i = index" 
                     [class.active]="activeBannerIndex === i"
                     (click)="setBannerIndex(i)">
               </span>
+            </div>
+          </div>
+
+          <!-- 4. PREMIUM BUS (New Layout) -->
+          <div class="premium-bus-white-card">
+            <div class="premium-bus-header">
+              <h3 class="premium-bus-title">Premium Bus</h3>
+              <p class="premium-bus-subtitle">Comfortable seats, No standing, Book & Go.</p>
+            </div>
+            <div class="premium-bus-body">
+              <div class="premium-bus-image-wrapper">
+                <img src="assets/home_truck.jpg" alt="Premium Bus" class="premium-bus-img" />
+              </div>
+              <div class="premium-bus-buttons">
+                <button class="premium-bus-btn">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M18.8 4H5.2C4 4 3 5 3 6.2v10.6c0 1.2 1 2.2 2.2 2.2l-.8 1v1c0 .5.4 1 1 1h13.2c.6 0 1-.5 1-1v-1l-.8-1c1.2 0 2.2-1 2.2-2.2V6.2c0-1.2-1-2.2-2.2-2.2zM9 16c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4-5H5V7h14v4z"/>
+                  </svg>
+                  <span class="premium-btn-text">P91</span>
+                </button>
+                <button class="premium-bus-btn">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M18.8 4H5.2C4 4 3 5 3 6.2v10.6c0 1.2 1 2.2 2.2 2.2l-.8 1v1c0 .5.4 1 1 1h13.2c.6 0 1-.5 1-1v-1l-.8-1c1.2 0 2.2-1 2.2-2.2V6.2c0-1.2-1-2.2-2.2-2.2zM9 16c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm6 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm4-5H5V7h14v4z"/>
+                  </svg>
+                  <span class="premium-btn-text">P570S</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -515,33 +484,50 @@
     <!-- ================= FIXED BOTTOM NAV OVERLAY ================= -->
     <div class="custom-bottom-nav">
       <div class="nav-item" [class.active]="currentTab === 'home'" (click)="setTab('home')">
+        <!-- New exact Home icon -->
         <svg class="nav-svg" viewBox="0 0 24 24">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          <!-- Post -->
+          <rect x="11.5" y="4" width="2" height="15" fill="currentColor" />
+          <!-- Top Arrow (Right) -->
+          <path d="M 6.5,5 H 16 L 19.5,7.5 L 16,10 H 6.5 C 6,10 5.5,9.5 5.5,9 V 6 C 5.5,5.5 6,5 6.5,5 Z" fill="currentColor" />
+          <!-- Bottom Arrow (Left) -->
+          <path d="M 17.5,11 H 8 L 4.5,13.5 L 8,16 H 17.5 C 18,16 18.5,15.5 18.5,15 V 12 C 18.5,11.5 18,11 17.5,11 Z" fill="currentColor" />
         </svg>
         <span class="nav-label">Home</span>
       </div>
       <div class="nav-item" [class.active]="currentTab === 'passes'" (click)="setTab('passes')">
+        <!-- New exact Passes icon (Number 1 Tunnel shape) -->
         <svg class="nav-svg" viewBox="0 0 24 24">
-          <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2-.9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+          <!-- Solid grey block, wider -->
+          <rect x="1.5" y="5" width="21" height="15" rx="3.5" fill="currentColor" />
+          <!-- White Arch Cutout -->
+          <path d="M 0.5,14.5 C 7,7.5 17,7.5 23.5,14.5 L 23.5,17.5 C 17,10.5 7,10.5 0.5,17.5 Z" fill="#ffffff" />
+          <!-- White "1" Cutout -->
+          <path d="M 11,21 L 11,17 L 8,18.5 L 7.5,17 L 12,13.5 L 15.5,13.5 L 15.5,21 Z" fill="#ffffff" />
         </svg>
         <span class="nav-label">Passes</span>
       </div>
       <div class="nav-item" [class.active]="currentTab === 'live'" (click)="setTab('live')">
+        <!-- New exact Live icon (Thick Donut) -->
         <svg class="nav-svg" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
-          <circle cx="12" cy="12" r="3.5" fill="currentColor"/>
+          <circle cx="12" cy="11.5" r="7.5" stroke="currentColor" stroke-width="5" fill="none" />
         </svg>
         <span class="nav-label">Live</span>
       </div>
       <div class="nav-item" [class.active]="currentTab === 'ticket'" (click)="setTab('ticket')">
+        <!-- New exact Ticket icon (Wide, top/bottom notches) -->
         <svg class="nav-svg" viewBox="0 0 24 24">
-          <path d="M20 12c0-1.1.9-2 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2zm-4 4.25H8v-1.5h8v1.5zm0-3.25H8v-1.5h8v1.5zm0-3.25H8v-1.5h8v1.5z"/>
+          <path d="M 6.5,3 L 9.5,3 C 9.5,4.5 10.5,5.5 12,5.5 C 13.5,5.5 14.5,4.5 14.5,3 L 17.5,3 C 18,3 18.5,3.5 18.5,4 L 18.5,19 C 18.5,19.5 18,20 17.5,20 L 14.5,20 C 14.5,18.5 13.5,17.5 12,17.5 C 10.5,17.5 9.5,18.5 9.5,20 L 6.5,20 C 6,20 5.5,19.5 5.5,19 L 5.5,4 C 5.5,3.5 6,3 6.5,3 Z" fill="currentColor" />
         </svg>
         <span class="nav-label">Ticket</span>
       </div>
       <div class="nav-item" [class.active]="currentTab === 'profile'" (click)="setTab('profile')">
+        <!-- New exact Profile icon -->
         <svg class="nav-svg" viewBox="0 0 24 24">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          <!-- Head -->
+          <circle cx="12" cy="7.5" r="4" fill="currentColor" />
+          <!-- Body -->
+          <path d="M 5,20 L 5,18 C 5,14 8,12 12,12 C 16,12 19,14 19,18 L 19,20 C 19,20.5 18.5,21 18,21 L 6,21 C 5.5,21 5,20.5 5,20 Z" fill="currentColor" />
         </svg>
         <span class="nav-label">Profile</span>
       </div>
