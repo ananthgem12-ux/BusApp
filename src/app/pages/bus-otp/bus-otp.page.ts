@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent } from '@ionic/angular/standalone';
-import jsQR from 'jsqr';
+
+import { BrowserQRCodeReader } from '@zxing/browser';
 
 @Component({
   selector: 'app-bus-otp',
@@ -29,6 +30,8 @@ export class BusOtpPage implements OnInit, OnDestroy {
   private canvasElement: HTMLCanvasElement | null = null;
   private canvasContext: CanvasRenderingContext2D | null = null;
   private scanAnimationFrameId: number | null = null;
+  private codeReader = new BrowserQRCodeReader();
+  private zxingControls: any = null;
   
   scanOnly = false;
   originalTicket: any = null;
@@ -218,6 +221,10 @@ export class BusOtpPage implements OnInit, OnDestroy {
   }
 
   stopCamera() {
+    if (this.zxingControls) {
+      this.zxingControls.stop();
+      this.zxingControls = null;
+    }
     if (this.scanAnimationFrameId) {
       cancelAnimationFrame(this.scanAnimationFrameId);
       this.scanAnimationFrameId = null;
@@ -232,45 +239,27 @@ export class BusOtpPage implements OnInit, OnDestroy {
   }
 
   startScanning() {
-    if (!this.canvasElement) {
-      this.canvasElement = document.createElement('canvas');
-      this.canvasContext = this.canvasElement.getContext('2d');
-    }
+    if (!this.videoElement) return;
     
-    if (this.scanAnimationFrameId) {
-      cancelAnimationFrame(this.scanAnimationFrameId);
+    if (this.zxingControls) {
+      this.zxingControls.stop();
+      this.zxingControls = null;
     }
-    
-    this.scanLoop();
-  }
 
-  scanLoop() {
-    if (!this.scanMode || !this.videoElement || !this.cameraStream) {
-      return;
-    }
-    
-    if (this.videoElement.readyState === this.videoElement.HAVE_ENOUGH_DATA) {
-      const width = this.videoElement.videoWidth;
-      const height = this.videoElement.videoHeight;
-      if (this.canvasElement && this.canvasContext) {
-        this.canvasElement.width = width;
-        this.canvasElement.height = height;
-        this.canvasContext.drawImage(this.videoElement, 0, 0, width, height);
-        const imageData = this.canvasContext.getImageData(0, 0, width, height);
-        
-        const code = jsQR(imageData.data, imageData.width, imageData.height, {
-          inversionAttempts: 'dontInvert',
-        });
-        
-        if (code && code.data) {
-          console.log('Decoded QR Code:', code.data);
-          this.handleQrData(code.data);
-          return; // Stop scan loop
-        }
+    this.codeReader.decodeFromVideoElement(this.videoElement, (result: any, error: any, controls: any) => {
+      if (!this.zxingControls) {
+        this.zxingControls = controls;
       }
-    }
-    
-    this.scanAnimationFrameId = requestAnimationFrame(() => this.scanLoop());
+      if (result) {
+        console.log('Decoded QR Code:', result.getText());
+        controls.stop();
+        this.zxingControls = null;
+        this.handleQrData(result.getText());
+      }
+      // We ignore the error callback because it fires continuously when no QR code is found
+    }).catch((err: any) => {
+      console.warn('ZXing start error:', err);
+    });
   }
 
   handleQrData(qrData: string) {
