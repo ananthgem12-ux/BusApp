@@ -1,0 +1,10 @@
+{
+  "/commuter-proxy/*": {
+    "target": "https://commuter.mtcbusits.in",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/commuter-proxy": ""
+    }
+  }
+}

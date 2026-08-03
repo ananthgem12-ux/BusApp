@@ -1,0 +1,231 @@
+<ion-content fullscreen>
+
+  <div class="page">
+    
+    <!-- HEADER -->
+    <div class="header-container">
+      <!-- Close button -->
+      <button class="close-btn" (click)="goBack()">
+        ✕
+      </button>
+
+      <!-- Bus Selection Display/Edit -->
+      <div class="bus-route-wrapper">
+        <div class="bus-route-title" *ngIf="!isEditingBus" (click)="toggleEditingBus()">
+          {{ busNo }}
+          <span class="edit-pencil-icon">
+            <!-- Inline SVG Pencil -->
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="#1477ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+            </svg>
+          </span>
+        </div>
+        
+        <!-- Input field when editing route -->
+        <div class="bus-route-input-container" *ngIf="isEditingBus" style="position: relative;">
+          <div style="display: flex; gap: 8px;">
+            <input
+              type="text"
+              class="bus-edit-input"
+              [(ngModel)]="busNo"
+              (ngModelChange)="onBusNoChange()"
+              (focus)="clearBusInput()"
+              placeholder="Enter Bus No"
+              style="text-transform: uppercase;"
+            />
+            <button class="bus-edit-done-btn" (click)="toggleEditingBus()">Done</button>
+          </div>
+          
+          <div class="bus-suggestions-dropdown" *ngIf="busList.length > 0">
+            <div class="bus-suggestion-item" 
+                 *ngFor="let bus of filteredBusList()" 
+                 (click)="selectBus(bus)">
+              {{ bus }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bus Type -->
+        <select class="type-select" [(ngModel)]="busType" (change)="userOverridePrice = null">
+          <option *ngFor="let type of busTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+
+      <!-- Corner Bus Illustration -->
+      <img [src]="busImage" class="red-bus-image" alt="Bus" />
+    </div>
+
+    <!-- Loading state indicator -->
+    <div *ngIf="isLoading" class="loading-indicator">
+      Fetching route data from MTC...
+    </div>
+    <!-- MAIN FORM FIELDS -->
+    <div class="form-container">
+      
+      <!-- ================= SOURCE STOP ================= -->
+      <!-- Collapsed Source card -->
+      <div class="card collapsed-card" *ngIf="!showSourceSelect" (click)="toggleSourceSelect()">
+        <div class="card-details">
+          <span class="card-label">Source Stop</span>
+          <span class="card-value">{{ source || 'Select Source Stop' }}</span>
+        </div>
+        <button class="card-edit-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="#888" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Expanded Source card (Search input) -->
+      <div class="card search-card" *ngIf="showSourceSelect">
+        <span class="card-label">Source station</span>
+        <div class="search-input-wrapper">
+          <span class="search-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="#a0a0a0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input 
+            type="text" 
+            [(ngModel)]="sourceSearchQuery" 
+            placeholder="Search or Enter Source Stop"
+          />
+        </div>
+      </div>
+
+      <!-- Source stops grey container -->
+      <div class="grey-container" *ngIf="showSourceSelect">
+        <div class="container-title">Select Source Stop</div>
+        <div class="stops-list">
+          <button 
+            *ngFor="let stop of filteredSourceStops()" 
+            class="stop-btn"
+            [class.selected]="stop === source"
+            (click)="selectSourceStop(stop)"
+          >
+            {{ stop }}
+          </button>
+          <div *ngIf="filteredSourceStops().length === 0" class="no-stops">
+            No stops found. Type to use custom name.
+          </div>
+        </div>
+      </div>
+
+      <!-- DOWN ARROW SEPARATOR -->
+      <div class="arrow-separator" *ngIf="!showSourceSelect && !showDestSelect">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="#b0b0b0" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+
+      <!-- ================= DESTINATION STOP ================= -->
+      <!-- Collapsed Destination card -->
+      <div class="card collapsed-card" *ngIf="!showDestSelect" (click)="toggleDestSelect()">
+        <div class="card-details">
+          <span class="card-label">Destination Stop</span>
+          <span class="card-value">{{ destination || 'Select Destination Stop' }}</span>
+        </div>
+        <button class="card-edit-btn">
+          <svg viewBox="0 0 24 24" width="14" height="14" stroke="#888" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Expanded Destination card (Search input) -->
+      <div class="card search-card" *ngIf="showDestSelect">
+        <span class="card-label">Destination station</span>
+        <div class="search-input-wrapper">
+          <span class="search-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="#a0a0a0" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input 
+            type="text" 
+            [(ngModel)]="destSearchQuery" 
+            placeholder="Search or Enter Destination Stop"
+          />
+        </div>
+      </div>
+
+      <!-- Destination stops grey container -->
+      <div class="grey-container" *ngIf="showDestSelect">
+        <div class="container-title">Select Destination Stop</div>
+        
+        <div class="towards-label">
+          {{ busNo }} ↓ towards {{ routesCache[busNo.trim().toUpperCase()]?.destination || destination }}
+        </div>
+
+        <div class="stops-list">
+          <button 
+            *ngFor="let stop of filteredDestStops()" 
+            class="stop-btn"
+            [class.selected]="stop === destination"
+            (click)="selectDestStop(stop)"
+          >
+            {{ stop }}
+          </button>
+          <div *ngIf="filteredDestStops().length === 0" class="no-stops">
+            No stops found. Type to use custom name.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM FIXED BOOKING PANEL -->
+    <div class="bottom-panel" *ngIf="!showSourceSelect && !showDestSelect">
+      <div class="payment-info-row">
+        <span class="payment-label">Ticket payment information</span>
+        
+        <!-- Count pill (- 01 [person] +) -->
+        <div class="person-selector-pill">
+          <button class="pill-btn minus-btn" (click)="decrease()">−</button>
+          <span class="pill-count">
+            {{ persons < 10 ? '0' + persons : persons }}
+            <span class="person-pill-icon">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+              </svg>
+            </span>
+          </span>
+          <button class="pill-btn plus-btn" (click)="increase()">+</button>
+        </div>
+      </div>
+
+      <button class="book-button"
+              (mousedown)="onBookPressStart($event)" 
+              (mouseup)="onBookPressEnd($event)" 
+              (mouseleave)="onBookPressEnd($event)"
+              (touchstart)="onBookPressStart($event)" 
+              (touchend)="onBookPressEnd($event)"
+              (click)="onBookClick($event)">
+        Book Bus @ ₹{{ total }}
+      </button>
+    </div>
+
+    <!-- ================= PRICE EDIT DIALOG ================= -->
+    <div class="price-edit-backdrop" *ngIf="showPriceEdit">
+      <div class="price-edit-card">
+        <h3>Edit Ticket Price</h3>
+        <p>Enter the base ticket price (₹):</p>
+        <input type="number" 
+               [(ngModel)]="editingPrice" 
+               placeholder="13" 
+               class="price-edit-input" />
+        <div class="dialog-actions">
+          <button class="dialog-btn cancel" (click)="cancelPriceEdit()">Cancel</button>
+          <button class="dialog-btn save" (click)="savePrice()">Save</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

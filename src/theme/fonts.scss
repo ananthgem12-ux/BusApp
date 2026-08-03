@@ -1,0 +1,174 @@
+/*
+ * App Fonts System
+ * ----------------------------------------------------------------------------
+ * This file declares all font faces, utility CSS classes, and CSS variables
+ * for the custom fonts located in `src/assets/fonts/`.
+ */
+
+/* 1. Font Face Declarations */
+
+@font-face {
+  font-family: 'PixelOperator';
+  src: url('/assets/fonts/PixelOperator.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelOperator8';
+  src: url('/assets/fonts/PixelOperator8.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelOperatorMono';
+  src: url('/assets/fonts/PixelOperatorMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelOperatorMono-Bold';
+  src: url('/assets/fonts/PixelOperatorMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelOperatorMono8';
+  src: url('/assets/fonts/PixelOperatorMono8.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PixelOperatorMonoHB';
+  src: url('/assets/fonts/PixelOperatorMonoHB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pixelon';
+  src: url('/assets/fonts/Pixelon-OGALo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VT323';
+  src: url('/assets/fonts/VT323-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* For backwards compatibility with local declarations */
+@font-face {
+  font-family: 'VT323-Regular';
+  src: url('/assets/fonts/PixelOperatorMono-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pixelgridtrial-linedownboldm';
+  src: url('/assets/fonts/pixelgridtrial-linedownboldm.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pixelgridtrial-linedownnorms';
+  src: url('/assets/fonts/pixelgridtrial-linedownnorms.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pixelgridtrial-linedownthins';
+  src: url('/assets/fonts/pixelgridtrial-linedownthins.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pixelgridtrial-lineskybolds';
+  src: url('/assets/fonts/pixelgridtrial-lineskybolds.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* 2. Global CSS Custom Properties (Variables) */
+
+:root {
+  --font-pixel-operator: 'PixelOperator', sans-serif;
+  --font-pixel-operator-8: 'PixelOperator8', sans-serif;
+  --font-pixel-operator-mono: 'PixelOperatorMono', monospace;
+  --font-pixel-operator-mono-bold: 'PixelOperatorMono-Bold', monospace;
+  --font-pixel-operator-mono-8: 'PixelOperatorMono8', monospace;
+  --font-pixel-operator-mono-hb: 'PixelOperatorMonoHB', monospace;
+  --font-pixelon: 'Pixelon', sans-serif;
+  --font-vt323: 'VT323', monospace;
+  --font-vt323-regular: 'VT323-Regular', monospace;
+  --font-linedown-bold: 'pixelgridtrial-linedownboldm', sans-serif;
+  --font-linedown-normal: 'pixelgridtrial-linedownnorms', sans-serif;
+  --font-linedown-thin: 'pixelgridtrial-linedownthins', sans-serif;
+  --font-linesky-bold: 'pixelgridtrial-lineskybolds', sans-serif;
+}
+
+
+/* 3. Global Typography Utility Classes */
+
+.font-pixel-operator {
+  font-family: var(--font-pixel-operator);
+}
+
+.font-pixel-operator-8 {
+  font-family: var(--font-pixel-operator-8);
+}
+
+.font-pixel-operator-mono {
+  font-family: var(--font-pixel-operator-mono);
+}
+
+.font-pixel-operator-mono-bold {
+  font-family: var(--font-pixel-operator-mono-bold);
+}
+
+.font-pixel-operator-mono-8 {
+  font-family: var(--font-pixel-operator-mono-8);
+}
+
+.font-pixel-operator-mono-hb {
+  font-family: var(--font-pixel-operator-mono-hb);
+}
+
+.font-pixelon {
+  font-family: var(--font-pixelon);
+}
+
+.font-vt323 {
+  font-family: var(--font-vt323);
+}
+
+.font-vt323-regular {
+  font-family: var(--font-vt323-regular);
+}
+
+.font-linedown-bold {
+  font-family: var(--font-linedown-bold);
+}
+
+.font-linedown-normal {
+  font-family: var(--font-linedown-normal);
+}
+
+.font-linedown-thin {
+  font-family: var(--font-linedown-thin);
+}
+
+.font-linesky-bold {
+  font-family: var(--font-linesky-bold);
+}

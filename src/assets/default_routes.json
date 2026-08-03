@@ -1,0 +1,822 @@
+{
+  "19": {
+    "route_no": "19",
+    "origin": "THIAGARAYA NAGAR",
+    "destination": "THIRUPORUR",
+    "stages_count": 21,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "THIAGARAYA NAGAR"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "SAIDAPET"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "ENG.COLLEGE"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "WOMEN'S POLYTECHNIC"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 13,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "CHURCH"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "PALAVASTHIC CHEMICALS"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "HINDUSTAN ENG. COLLEGE"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "KELAMBAKKAM"
+      },
+      {
+        "sequence": 18,
+        "stage_name": "CHENGAMMAL RD. JN."
+      },
+      {
+        "sequence": 19,
+        "stage_name": "KOMAN NAGAR RD JN."
+      },
+      {
+        "sequence": 20,
+        "stage_name": "KALAVAKKAM TEA STALL"
+      },
+      {
+        "sequence": 21,
+        "stage_name": "THIRUPORUR"
+      }
+    ]
+  },
+  "570": {
+    "route_no": "570",
+    "origin": "M.G.R.KOYAMBEDU",
+    "destination": "KELAMBAKKAM",
+    "stages_count": 24,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "M.G.R.KOYAMBEDU"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "M.M.D.A.COLONY RD.JN."
+      },
+      {
+        "sequence": 3,
+        "stage_name": "JN OF III AND 1ST AVE"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "JAFFARKHAN PET"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "CIPET"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "GUINDY R.S"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "CONCORDE"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "JN.OF RACE COURSE RD"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "GURUNANAK COLLEGE"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "VELACHERY"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "I.R.T. RD.JN."
+      },
+      {
+        "sequence": 12,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 13,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 18,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 19,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 20,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 21,
+        "stage_name": "CHURCH"
+      },
+      {
+        "sequence": 22,
+        "stage_name": "PALAVASTHIC CHEMICALS"
+      },
+      {
+        "sequence": 23,
+        "stage_name": "HINDUSTAN ENG. COLLEGE"
+      },
+      {
+        "sequence": 24,
+        "stage_name": "KELAMBAKKAM"
+      }
+    ]
+  },
+  "555S": {
+    "route_no": "555S",
+    "origin": "KILAMBAKKAM B.S.",
+    "destination": "SHOZHANGANALLUR",
+    "stages_count": 19,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "KILAMBAKKAM B.S."
+      },
+      {
+        "sequence": 2,
+        "stage_name": "VANDALUR ZOO"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "ANNA NAGAR"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "KOLAPAKKAM"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "VENGAMBAKKAM"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "KANDIGAI"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "MAMBAKKAM"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "ARMY CAMP"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "PUDUPAKKAM"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "PUDUPAKKAM"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "SAMIYAR PANNAI"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "KELAMBAKKAM RD.JN."
+      },
+      {
+        "sequence": 13,
+        "stage_name": "HINDUSTAN ENG. COLLEGE"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "PALAVASTHIC CHEMICALS"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "CHURCH"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 18,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 19,
+        "stage_name": "SHOZHANGANALLUR"
+      }
+    ]
+  },
+  "MAA2": {
+    "route_no": "MAA2",
+    "origin": "CHENNAI AIRPORT",
+    "destination": "SIRUSERI I.T PARK",
+    "stages_count": 19,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "CHENNAI AIRPORT"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "TIRUSULAM AIRPORT"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "PALLAVARAM"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "PALLAVARAM NEW BRIDGE"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "VELS UNIVERSITY"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "D.J.MAT.SCHOOL"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "ECHANKADU"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "SUNNAMBU KOLATHUR"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "KAMATCHI HOSPITAL"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "Chennai One It Sez"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "THORAIPAKKAM"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 13,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "SHOLINGANALLUR"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "SEMMANCHERI ALAMARAM"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 18,
+        "stage_name": "SIPCOT"
+      },
+      {
+        "sequence": 19,
+        "stage_name": "SIRUSERI I.T PARK"
+      }
+    ]
+  },
+  "102P": {
+    "route_no": "102P",
+    "origin": "ISLAND GROUND",
+    "destination": "PERUMPAKKAM S.C.B.",
+    "stages_count": 17,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "ISLAND GROUND"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "SECRETARIAT"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "CHEPAUK"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "Q.M.C"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "FORESHORE ESTATE"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "A.M.S.HOSPITAL"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "ADYAR O.T."
+      },
+      {
+        "sequence": 8,
+        "stage_name": "ADYAR DEPOT"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 13,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "NUCLEUS COMPANY"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "PERUMPAKKAM S.C.B."
+      }
+    ]
+  },
+  "102X": {
+    "route_no": "102X",
+    "origin": "ISLAND GROUND",
+    "destination": "THIRUPORUR",
+    "stages_count": 25,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "ISLAND GROUND"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "SECRETARIAT"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "CHEPAUK"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "Q.M.C"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "FORESHORE ESTATE"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "A.M.S.HOSPITAL"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "ADYAR O.T."
+      },
+      {
+        "sequence": 8,
+        "stage_name": "INDIRA NAGAR WATER TANK"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 13,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 18,
+        "stage_name": "CHURCH"
+      },
+      {
+        "sequence": 19,
+        "stage_name": "PALAVASTHIC CHEMICALS"
+      },
+      {
+        "sequence": 20,
+        "stage_name": "HINDUSTAN ENG. COLLEGE"
+      },
+      {
+        "sequence": 21,
+        "stage_name": "KELAMBAKKAM"
+      },
+      {
+        "sequence": 22,
+        "stage_name": "CHENGAMMAL RD. JN."
+      },
+      {
+        "sequence": 23,
+        "stage_name": "KOMAN NAGAR RD JN."
+      },
+      {
+        "sequence": 24,
+        "stage_name": "KALAVAKKAM TEA STALL"
+      },
+      {
+        "sequence": 25,
+        "stage_name": "THIRUPORUR"
+      }
+    ]
+  },
+  "102CT": {
+    "route_no": "102CT",
+    "origin": "THIRUVANMIYUR",
+    "destination": "SIRUSERI I.T.PARK",
+    "stages_count": 12,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "THIRUVANMIYUR"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "SIPCOT"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "SIRUSERI I.T.PARK"
+      }
+    ]
+  },
+  "570S": {
+    "route_no": "570S",
+    "origin": "M.G.R.KOYAMBEDU",
+    "destination": "KELAMBAKKAM",
+    "stages_count": 24,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "M.G.R.KOYAMBEDU"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "M.M.D.A.COLONY RD.JN."
+      },
+      {
+        "sequence": 3,
+        "stage_name": "JN OF III AND 1ST AVE"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "JAFFARKHAN PET"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "CIPET"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "GUINDY R.S"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "CONCORDE"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "JN.OF RACE COURSE RD"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "GURUNANAK COLLEGE"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "VELACHERY"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "I.R.T. RD.JN."
+      },
+      {
+        "sequence": 12,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 13,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 14,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 15,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 16,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 17,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 18,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 19,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 20,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 21,
+        "stage_name": "CHURCH"
+      },
+      {
+        "sequence": 22,
+        "stage_name": "PALAVASTHIC CHEMICALS"
+      },
+      {
+        "sequence": 23,
+        "stage_name": "HINDUSTAN ENG. COLLEGE"
+      },
+      {
+        "sequence": 24,
+        "stage_name": "KELAMBAKKAM"
+      }
+    ]
+  },
+  "102ct": {
+    "route_no": "102ct",
+    "origin": "THIRUVANMIYUR",
+    "destination": "SIRUSERI I.T.PARK",
+    "stages_count": 12,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "THIRUVANMIYUR"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "SIPCOT"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "SIRUSERI I.T.PARK"
+      }
+    ]
+  },
+  "102Xct": {
+    "route_no": "102Xct",
+    "origin": "THIRUVANMIYUR",
+    "destination": "SIRUSERI I.T.PARK",
+    "stages_count": 12,
+    "stages": [
+      {
+        "sequence": 1,
+        "stage_name": "THIRUVANMIYUR"
+      },
+      {
+        "sequence": 2,
+        "stage_name": "SRP TOOLS"
+      },
+      {
+        "sequence": 3,
+        "stage_name": "KANDANCHAVADI"
+      },
+      {
+        "sequence": 4,
+        "stage_name": "THORAPPAKKAM TEA SHOP"
+      },
+      {
+        "sequence": 5,
+        "stage_name": "MOOTAKARAN CHAVADI"
+      },
+      {
+        "sequence": 6,
+        "stage_name": "KARAPAKKAM"
+      },
+      {
+        "sequence": 7,
+        "stage_name": "SHOZHANGANALLUR P.U.OFFICE"
+      },
+      {
+        "sequence": 8,
+        "stage_name": "KUMARAN NAGAR"
+      },
+      {
+        "sequence": 9,
+        "stage_name": "SEMMANCHERI"
+      },
+      {
+        "sequence": 10,
+        "stage_name": "NAVALUR"
+      },
+      {
+        "sequence": 11,
+        "stage_name": "SIPCOT"
+      },
+      {
+        "sequence": 12,
+        "stage_name": "SIRUSERI I.T.PARK"
+      }
+    ]
+  }
+}
