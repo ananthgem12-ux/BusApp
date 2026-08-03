@@ -28,7 +28,7 @@
     </div>
 
     <!-- ================= HOME TAB ================= -->
-    <div class="tab-content" *ngIf="currentTab === 'home'">
+    <div class="tab-content" [hidden]="currentTab !== 'home'">
       
       <div class="home-tab-wrapper">
         
@@ -245,14 +245,14 @@
     </div>
 
     <!-- ================= PASSES TAB ================= -->
-    <div class="tab-content" *ngIf="currentTab === 'passes'">
+    <div class="tab-content" [hidden]="currentTab !== 'passes'">
       <div class="image-wrapper">
         <img src="assets/passes_bg.png" class="bg-img" alt="Passes" />
       </div>
     </div>
 
     <!-- ================= LIVE TAB ================= -->
-    <div class="tab-content live-tab" *ngIf="currentTab === 'live'">
+    <div class="tab-content live-tab" [hidden]="currentTab !== 'live'">
       <div class="live-layout-container">
         <!-- Cartoon Illustration at the top -->
         <div class="live-illustration-container">
@@ -275,7 +275,7 @@
     </div>
 
     <!-- ================= TICKET TAB ================= -->
-    <div class="tab-content ticket-tab" *ngIf="currentTab === 'ticket'">
+    <div class="tab-content ticket-tab" [hidden]="currentTab !== 'ticket'">
       <div class="ticket-layout-container">
         
         <!-- Active Tickets section (B/W high contrast active cards) -->
@@ -380,7 +380,7 @@
     </div>
 
     <!-- ================= PROFILE TAB ================= -->
-    <div class="tab-content profile-tab" *ngIf="currentTab === 'profile'">
+    <div class="tab-content profile-tab" [hidden]="currentTab !== 'profile'">
       <div class="profile-layout-container">
         
         <!-- Header Bar -->
